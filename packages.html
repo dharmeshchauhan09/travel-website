@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages - Travel Explore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        header {
+            background: #004080;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .packages {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .packages h2 {
+            font-size: 2.5rem;
+            color: #004080;
+            margin-bottom: 30px;
+        }
+
+        .package {
+            background: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            width: 280px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            vertical-align: top;
+        }
+
+        .package img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .package h3 {
+            color: #004080;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .package p {
+            margin: 8px 0;
+            font-size: 1.1rem;
+        }
+
+        .package button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #ffcc00;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .package button:hover {
+            background: #e6b800;
+        }
+
+        .package:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: #004080;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .packages h2 {
+                font-size: 2rem;
+            }
+
+            .package {
+                width: 90%;
+                margin: 15px auto;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Travel Explore</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="packages.html">Packages</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="packages">
+        <h2>Travel Packages</h2>
+
+        <div class="package">
+            <img src="beach.jpeg" alt="Beach Paradise">
+            <h3>Beach Paradise</h3>
+            <p>5 Nights / 6 Days</p>
+            <p>Starting at ₹8999</p>
+            <button onclick="window.location.href='Booking.html'">Book Now</button>
+        </div>
+
+        <div class="package">
+            <img src="mountain.jpeg" alt="Mountain Adventure">
+            <h3>Mountain Adventure</h3>
+            <p>7 Nights / 8 Days</p>
+            <p>Starting at ₹12999</p>
+            <button onclick="window.location.href='Booking.html'">Book Now</button>
+        </div>
+
+        <div class="package">
+            <img src="City skyline.jpg" alt="City Escape">
+            <h3>City Escape</h3>
+            <p>3 Nights / 4 Days</p>
+            <p>Starting at ₹10999</p>
+            <button onclick="window.location.href='Booking.html'">Book Now</button>
+        </div>
+
+        <div class="package">
+            <img src="Desert Safari.jpg" alt="Desert Safari">
+            <h3>Desert Safari</h3>
+            <p>4 Nights / 5 Days</p>
+            <p>Starting at ₹15999</p>
+            <button onclick="window.location.href='Booking.html'">Book Now</button>
+        </div>
+
+        <div class="package">
+            <img src="Cruise Voyage.webp" alt="Cruise Voyage">
+            <h3>Cruise Voyage</h3>
+            <p>6 Nights / 7 Days</p>
+            <p>Starting at ₹25999</p>
+            <button onclick="window.location.href='Booking.html'">Book Now</button>
+        </div>
+
+        <div class="package">
+            <img src="Wildlife Expedition.jpg" alt="Wildlife Expedition">
+            <h3>Wildlife Expedition</h3>
+            <p>5 Nights / 6 Days</p>
+            <p>Starting at ₹11999</p>
+            <button onclick="window.location.href='Booking.html'">Book Now</button>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Travel Explore. All rights reserved.</p>
+    </footer>
+</body>
+</html>

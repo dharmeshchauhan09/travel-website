@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Travel Explore</title>
+    <style>
+        /* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f9f9f9;
+}
+
+/* Header styling */
+header {
+    background: #004080;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Booking Section */
+.contact {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    color: #004080;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea, select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #004080;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #e6b800;
+}
+
+#formMessage {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: green;
+}
+
+/* Footer */
+footer {
+    background: #004080;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    input, textarea, select {
+        font-size: 0.95rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Travel Explore</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="packages.html">Packages</a>
+            <a href="contact.html">Booking</a>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h2>Booking Form</h2>
+        <form id="bookingForm">
+            <input type="text" id="name" placeholder="Your Full Name" required>
+            <input type="email" id="email" placeholder="Your Email Address" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="text" id="destination" placeholder="Desired Destination" required>
+            <input type="date" id="travelDate" required>
+            <select id="packageType" required>
+                <option value="">Select Package</option>
+                <option value="Beach Paradise">Beach Paradise</option>
+                <option value="Mountain Adventure">Mountain Adventure</option>
+                <option value="City Escape">City Escape</option>
+                <option value="Desert Safari">Desert Safari</option>
+                <option value="Cruise Voyage">Cruise Voyage</option>
+                <option value="Wildlife Expedition">Wildlife Expedition</option>
+            </select>
+            <button type="submit"onclick="window.location.href='Payment.html'">Confirm Booking</button>
+        </form>
+        <p id="formMessage"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Travel Explore. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("bookingForm");
+        const message = document.getElementById("formMessage");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+            message.style.color = "green";
+            message.textContent = "Thank you! Your booking request has been submitted.";
+            form.reset();
+        });
+    </script>
+</body>
+</html>
