@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Booking - Travel Explore</title>
     <style>
         /* Reset default styles */
@@ -140,17 +141,7 @@ footer {
     </style>
 </head>
 <body>
-    <header>
-        <h1>Travel Explore</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="packages.html">Packages</a>
-            <a href="contact.html">Booking</a>
-        </nav>
-    </header>
-
+    <div id="header"></div>
     <section class="contact">
         <h2>Booking Form</h2>
         <form id="bookingForm">
@@ -172,11 +163,6 @@ footer {
         </form>
         <p id="formMessage"></p>
     </section>
-
-    <footer>
-        <p>&copy; 2025 Travel Explore. All rights reserved.</p>
-    </footer>
-
     <script>
         const form = document.getElementById("bookingForm");
         const message = document.getElementById("formMessage");
@@ -188,5 +174,7 @@ footer {
             form.reset();
         });
     </script>
+    <div id="footer"></div>
+    <script src="index.js"></script>
 </body>
 </html>

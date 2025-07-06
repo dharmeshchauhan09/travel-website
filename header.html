@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Explore</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary-bg: #004080;
+      --accent: #ffcc00;
+      --text-light: #ffffff;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f4f6;
+    }
+
+    header {
+      background-color: var(--primary-bg);
+      color: var(--text-light);
+      padding: 1.2rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      flex-wrap: nowrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      color: var(--text-light);
+      font-size: 1.8rem;
+      cursor: pointer;
+      display: block;
+    }
+
+    .navbar {
+      background-color: var(--primary-bg);
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      padding-bottom: 1rem;
+    }
+
+    .navbar a {
+      color: var(--text-light);
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      width: 100%;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: var(--accent);
+      color: #111;
+    }
+
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .navbar {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .navbar a {
+        width: auto;
+      }
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: var(--primary-bg);
+      color: var(--text-light);
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <span>🌍</span>
+      <span>Travel Explore</span>
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="packages.html">Packages</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Main Content Example -->
+  <main style="padding: 2rem; text-align: center;">
+    <!-- <h2>Welcome to Travel Explore</h2>
+    <p>Your gateway to unforgettable adventures around the world!</p> -->
+  </main>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+
+</body>
+</html>
