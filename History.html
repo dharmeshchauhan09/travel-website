@@ -6,25 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f6f9;
-      padding: 40px 20px;
-      margin: 0;
+      background: url('travel6.jpeg') center center/cover no-repeat fixed;
       color: #333;
-       background: url('travel6.jpeg') center center/cover no-repeat fixed;
-      
+      padding: 20px;
     }
 
     h1 {
       text-align: center;
       color: #004080;
-      margin-bottom: 30px;
+      margin: 20px 0 30px;
       font-size: 2rem;
     }
 
     .history-list {
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
       display: flex;
       flex-wrap: wrap;
@@ -36,10 +39,13 @@
       background: #fff;
       border-radius: 12px;
       padding: 20px;
-      width: 320px;
+      width: 300px;
       box-shadow: 0 8px 15px rgba(0,0,0,0.1);
       position: relative;
       transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .history-item:hover {
@@ -49,14 +55,14 @@
 
     .history-item h3 {
       color: #004080;
-      margin-bottom: 10px;
       font-size: 1.3rem;
+      margin-bottom: 10px;
     }
 
     .history-item p {
-      margin: 6px 0;
       color: #555;
       font-size: 1rem;
+      margin: 4px 0;
     }
 
     .history-item p span {
@@ -65,17 +71,16 @@
     }
 
     .cancel-btn {
-      position: absolute;
-      top: 15px;
-      right: 15px;
       background: #ff4d4d;
       color: #fff;
       border: none;
-      padding: 6px 12px;
+      padding: 8px 14px;
       border-radius: 4px;
       cursor: pointer;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       transition: background 0.3s;
+      align-self: flex-start;
+      margin-top: 10px;
     }
 
     .cancel-btn:hover {
@@ -90,18 +95,36 @@
       width: 100%;
     }
 
-    @media (max-width: 600px) {
-      .history-item {
-        width: 100%;
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
       }
 
+      .history-item {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
       h1 {
         font-size: 1.6rem;
       }
 
+      .history-item {
+        width: 100%;
+      }
+
+      .history-item h3 {
+        font-size: 1.1rem;
+      }
+
+      .history-item p {
+        font-size: 0.95rem;
+      }
+
       .cancel-btn {
-        padding: 5px 10px;
-        font-size: 0.75rem;
+        font-size: 0.8rem;
+        padding: 6px 10px;
       }
     }
   </style>
