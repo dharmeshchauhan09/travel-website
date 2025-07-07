@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🧳 Booking History | Travel Explore</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      padding: 40px 20px;
+      margin: 0;
+      color: #333;
+       background: url('travel6.jpeg') center center/cover no-repeat fixed;
+      
+    }
+
+    h1 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .history-list {
+      max-width: 800px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .history-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      width: 320px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .history-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+    }
+
+    .history-item h3 {
+      color: #004080;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .history-item p {
+      margin: 6px 0;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .history-item p span {
+      font-weight: 600;
+      color: #000;
+    }
+
+    .cancel-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ff4d4d;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: background 0.3s;
+    }
+
+    .cancel-btn:hover {
+      background: #d93636;
+    }
+
+    .no-history {
+      text-align: center;
+      color: #777;
+      padding: 20px;
+      font-size: 1.1rem;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .history-item {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .cancel-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="header"></div>
+
+<h1>🧳 Your Booking History</h1>
+
+<div class="history-list" id="historyList"></div>
+
+<div id="footer"></div>
+
+<script>
+  $("#header").load("header.html");
+  $("#footer").load("footer.html");
+
+  displayBookings();
+
+  function displayBookings() {
+    const bookings = JSON.parse(localStorage.getItem("bookingHistory")) || [];
+    const container = document.getElementById("historyList");
+    container.innerHTML = "";
+
+    if (bookings.length === 0) {
+      container.innerHTML = "<p class='no-history'>No booking history found.</p>";
+      return;
+    }
+
+    bookings.forEach((entry, index) => {
+      container.innerHTML += `
+        <div class="history-item">
+          <h3>${entry.destination} - ${entry.package}</h3>
+          <p><span>Name:</span> ${entry.name}</p>
+          <p><span>Travel Date:</span> ${entry.travelDate}</p>
+          <p><span>Status:</span> ${entry.status}</p>
+          <button class="cancel-btn" onclick="cancelBooking(${index})">Cancel</button>
+        </div>
+      `;
+    });
+  }
+
+  function cancelBooking(index) {
+    if (confirm("Are you sure you want to cancel this booking?")) {
+      const bookings = JSON.parse(localStorage.getItem("bookingHistory")) || [];
+      bookings.splice(index, 1);
+      localStorage.setItem("bookingHistory", JSON.stringify(bookings));
+      displayBookings();
+    }
+  }
+</script>
+
+</body>
+</html>
